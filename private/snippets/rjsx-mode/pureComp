@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# contributor: Lin Chen 
+# name: pureComp
+# key: pureComp
+# -- 
+import React from "react";
+
+const ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} = (${2:{${3}}}) => {
+    return $0;
+}
+
+export default $1;

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name : categories
+# key : <cat
+# --
+#+JEKYLL_CATEGORIES: ${1:$$(yas-choose-value '("emacs" "linux" "shell" "frontend" "devops"))}  ${2:$$(yas-choose-value '("emacs" "linux" "shell" "frontend" "devops"))} 
+$0

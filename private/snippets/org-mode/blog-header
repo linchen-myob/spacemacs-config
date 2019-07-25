@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name : blog-header
+# key : <blog
+# --
+#+TITLE: ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}
+#+AUTHOR: 林晨<lc1990linux@gmail.com>
+#+OPTIONS: ^:nil toc:nil
+#+JEKYLL_TAGS: ${2:$$(yas-choose-value '("emacs" "linux" "cli" "react" "devops" "aws" ""))} ${3:$$(yas-choose-value '("emacs" "linux" "cli" "react" "devops" "aws" ""))}
+#+JEKYLL_CATEGORIES: ${4:$$(yas-choose-value '("emacs" "linux" "agile" "frontend" "devops" "translate" ""))}
+$0

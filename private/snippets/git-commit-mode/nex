@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: gcm-nex
+# key: gcm-nex
+# --
+[${1:NEX-}$2][chen] $0

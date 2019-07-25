@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor: Lin Chen 
+# name: it
+# key: it
+# --
+it("should $1", () => {
+  $0
+});

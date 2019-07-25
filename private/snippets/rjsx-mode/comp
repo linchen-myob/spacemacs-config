@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# contributor: Lin Chen 
+# name: comp
+# key: comp
+# -- 
+import React from "react";
+
+class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} extends React.Component {
+  render() {
+    return $0;
+  }
+}
+
+export default $1;

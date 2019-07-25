@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Lin Chen 
+# name: psf
+# key: psf
+# --
+    ${1:private} static final ${2:String} $3 = $4;

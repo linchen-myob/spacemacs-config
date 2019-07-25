@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Lin Chen 
+# name: react
+# key: react
+# -- 
+import React, { Component } from 'react';

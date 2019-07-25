@@ -1,55 +1,16 @@
 (defun dotspacemacs/layers ()
-  (setq-default
-   dotspacemacs-distribution 'spacemacs-base
-   dotspacemacs-enable-lazy-installation 'unused
-   dotspacemacs-ask-for-lazy-installation t
-   dotspacemacs-configuration-layer-path '()
-   dotspacemacs-configuration-layers
-   '(
-     ;; Emacs
+  (setq common-layers '(
      spacemacs-project
      spacemacs-navigation
-     imenu-list
      fasd
-     ;; treemacs
 		 neotree
-     ;; themes-megapack
      (multiple-cursors :variables multiple-cursors-backend 'evil-mc)
-     ;; language
-		 html
-		 emacs-lisp
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-snippets-in-popup t
 											auto-completion-idle-delay 0.01
                       auto-completion-private-snippets-directory "~/MyConfig/private/snippets/")
-     ;; spacemacs-default-company-backends '(company-keywords))
      yaml
-     import-js
-     prettier
-		 react
-     debug
-     (javascript :variables
-								 javascript-backend 'lsp
-								 javascript-fmt-tool 'prettier
-								 javascript-fmt-on-save 't
-								 js2-basic-offset 2
-								 js-indent-level 2
-								 node-add-modules-path t
-                 js2-include-node-externs t
-                 javascript-repl `nodejs
-								 javascript-import-tool 'import-js)
-     (lsp :variables
-          lsp-navigation 'simple
-          lsp-ui-sideline-enable nil)
-     (typescript :variables
-                 typescript-fmt-on-save 't
-                 typescript-fmt-tool 'prettier
-                 typescript-backend #'lsp)
-     ;; Devops
-     docker
-		 (terraform :variables terraform-auto-format-on-save t)
-     ;; Tools
      git
      ;; (wakatime :variables
      ;;           wakatime-api-key  "bf4dec38-82d7-49f1-a6d9-6fbc737c2b18"
@@ -60,13 +21,6 @@
           osx-dictionary-dictionary-choice "English")
      syntax-checking
      dap
-     (org :variables
-          ;; add it to org file: #+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
-          ;; org-enable-reveal-js-support t
-          ;; org-projectile-file "TODOs.org"
-          ;; org-enable-trello-support t
-          ;; org-enable-github-support t
-					)
      (shell :variables
             shell-default-position 'bottom
             shell-default-height 30
@@ -74,10 +28,41 @@
             multi-term-program "/bin/zsh"
             shell-enable-smart-eshell t
             shell-default-shell 'multi-term)
-     ;; (version-control :variables
-     ;;                  version-control-diff-tool 'git-gutter+
-     ;;                  version-control-global-margin t)
-     )
+))
+  (setq-default
+   dotspacemacs-distribution 'spacemacs-base
+   dotspacemacs-enable-lazy-installation 'unused
+   dotspacemacs-ask-for-lazy-installation t
+   dotspacemacs-configuration-layer-path '()
+   dotspacemacs-configuration-layers (if (version= emacs-version "26.1")
+                                         (append common-layers
+                                                 '(imenu-list
+                                                   html
+                                                   import-js
+                                                   prettier
+		                                               react
+                                                   debug
+                                                   (javascript :variables
+								                                               javascript-backend 'lsp
+								                                               javascript-fmt-tool 'prettier
+								                                               javascript-fmt-on-save 't
+								                                               js2-basic-offset 2
+								                                               js-indent-level 2
+								                                               node-add-modules-path t
+                                                               js2-include-node-externs t
+                                                               javascript-repl `nodejs
+								                                               javascript-import-tool 'import-js)
+                                                   (lsp :variables
+                                                        lsp-navigation 'simple
+                                                        lsp-ui-sideline-enable nil)
+                                                   (typescript :variables
+                                                               typescript-fmt-on-save 't
+                                                               typescript-fmt-tool 'prettier
+                                                               typescript-backend #'lsp)
+                                                   docker
+		                                               (terraform :variables terraform-auto-format-on-save t)
+                                                   ))
+                                       (append common-layers '(emacs-lisp org)))
    dotspacemacs-additional-packages '(
                                       ov
                                       hexo
@@ -137,7 +122,7 @@
    ;;                       solarized-dark
    ;;                       leuven
    ;;                       zenburn)
-   dotspacemacs-themes nil
+   dotspacemacs-themes (if (version= emacs-version "26.1") '(manoj-dark) '(leuven))
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '(
                                "Monaco"
@@ -192,19 +177,20 @@
   ;; (org-defkey org-mode-map [(meta return)] 'org-meta-return)
   (delete-selection-mode t)
   (package-initialize)
-  (add-to-list 'load-path "~/MyConfig/private/")
-  (setq yas-snippet-dirs (append '("~/MyConfig/private/snippets/") yas-snippet-dirs))
-;;  (require 'my-indent)                  ;
-  (require 'my-javascript)
-  (require 'my-jest)
-  (require 'my-typescript)
-	;; (require 'auto-fix)
-  ;; (require 'my-hack)
-  (require 'my-org-simple)
+  (add-to-list 'load-path "~/.spacemacs.d/private/")
+  (setq yas-snippet-dirs (append '("~/.spacemacs.d/private/snippets/") yas-snippet-dirs))
   (require 'my-key)
-  (require 'my-project)
-  (require 'my-git)
-  (require 'my-text)
+  (if (version= emacs-version "26.1")
+      (progn
+        (require 'my-javascript)
+        (require 'my-jest)
+        (require 'my-typescript)
+        (require 'my-project)
+        )
+    (progn
+      (require 'my-org-simple)
+      (require 'my-text)
+      ))
 	(add-hook 'term-mode-hook #'eterm-256color-mode)
   (setq ivy-initial-inputs-alist nil)
 	(font-lock-add-keywords
@@ -230,7 +216,7 @@
   ;; (setq auto-save-interval 5)
   (global-evil-matchit-mode)
 
-  (server-start)
+  (if (version= emacs-version "26.1") (server-start))
   ;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
   ;; (setq neo-vc-integration '(face))
   ;; (setq meghanada-javac-xlint "-Xlint:all,-processing")
@@ -248,7 +234,6 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
- '(custom-enabled-themes nil)
  '(custom-safe-themes
    (quote
     ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bd7b7c5df1174796deefce5debc2d976b264585d51852c962362be83932873d9" "b3775ba758e7d31f3bb849e7c9e48ff60929a792961a2d536edec8f68c671ca5" default)))

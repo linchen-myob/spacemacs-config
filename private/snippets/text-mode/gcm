@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: gcm
+# key: gcm
+# --
+[${1:SSNET2-}$2][Chen] $0

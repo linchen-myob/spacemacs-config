@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name : tags
+# key : <tags
+# --
+#+JEKYLL_TAGS: ${1:$$(yas-choose-value '("emacs" "linux" "cli" "react" "devops" "aws"))} ${2:$$(yas-choose-value '("emacs" "linux" "cli" "react" "devops" "aws"))} ${3:$$(yas-choose-value '("emacs" "linux" "cli" "react" "devops" "aws"))}
+$0

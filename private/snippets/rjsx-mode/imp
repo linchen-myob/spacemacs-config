@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Lin Chen 
+# name: imp
+# key: imp
+# --
+import $1 from '$1';

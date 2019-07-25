@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Lin Chen 
+# name: imr
+# key: imr
+# --
+import React from "react";

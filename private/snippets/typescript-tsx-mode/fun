@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Lin Chen 
+# name: fun
+# key: fun
+# --
+const $1 = () => {$2};
