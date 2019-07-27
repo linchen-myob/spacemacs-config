@@ -2,6 +2,7 @@
   (setq common-layers '(
      spacemacs-project
      spacemacs-navigation
+     spacemacs-editing
      fasd
 		 neotree
      (multiple-cursors :variables multiple-cursors-backend 'evil-mc)
@@ -180,6 +181,7 @@
   (add-to-list 'load-path "~/.spacemacs.d/private/")
   (setq yas-snippet-dirs (append '("~/.spacemacs.d/private/snippets/") yas-snippet-dirs))
   (require 'my-key)
+  (require 'my-text)
   (if (version= emacs-version "26.1")
       (progn
         (require 'my-javascript)
@@ -189,13 +191,13 @@
         )
     (progn
       (require 'my-org-simple)
-      (require 'my-text)
       ))
 	(add-hook 'term-mode-hook #'eterm-256color-mode)
   (setq ivy-initial-inputs-alist nil)
 	(font-lock-add-keywords
 	 'typescript-mode
 	 '(("\\<\\(\\sw+\\) ?(" 1 'font-lock-function-name-face)))
+  (show-paren-mode)
   ;; (npm-global-mode)
 
   ;; (defadvice switch-to-buffer (before save-buffer-now activate)
