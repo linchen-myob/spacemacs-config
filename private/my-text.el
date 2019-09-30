@@ -5,7 +5,11 @@
 
 (evilnc-default-hotkeys)
 
-;;;; mark;;;;;
+(global-evil-surround-mode)
+(global-origami-mode)
+(evil-vimish-fold-mode)
+
+;; mark;;;;;
 ;; F3 => fast to mark current word
 ;; M-h => fast to mard current paragraphs
 ;; Spc v -> expand-region start current word then press v to mark more and more
@@ -62,4 +66,6 @@
 ;;;👍️ da: 同di，但剪切内容包括配对符号本身；
 ;;;👍️ ya: 同yi，但复制内容包括配对符号本身。
 ;;;👍️ PS. dib等同于di(。diB等同于di{。
+;;; 1) c(hange)/d(elete)/y(ank)
+;;; 2) s(符号)/i(符号里的)/a(符号+里面的)/t(ag)
 (provide 'my-text)
