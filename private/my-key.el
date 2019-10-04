@@ -21,6 +21,7 @@
 		)
 	)
 
+(global-set-key (kbd "H-'") 'toggle-term)
 (define-key input-decode-map "\C-i" [C-i])
 (define-key input-decode-map [?\C-\[] (kbd "<C-[>"))
 
@@ -35,5 +36,18 @@
 ;; (global-set-key (kbd "C-H-k") 'tabbar-backward-group)
 (global-set-key (kbd "C-=") 'upward-mark-thing)
 ;; (global-set-key [backspace] 'evil-delete-backward-char)
+
+;; indent guide
+(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+(setq highlight-indent-guides-method 'character)
+(setq highlight-indent-guides-character ?\|)
+
+(setq highlight-indent-guides-auto-odd-face-perc 15)
+(setq highlight-indent-guides-auto-even-face-perc 15)
+(setq highlight-indent-guides-auto-character-face-perc 20)
+
+(setq highlight-indent-guides-delay 0)
+
+
 
 (provide 'my-key)

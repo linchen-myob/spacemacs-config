@@ -27,7 +27,7 @@
    ((member project-type '(rails-test ruby-test lein-test go)) "_test")
    ((member project-type '(scons)) "test")
    ((member project-type '(generic)) ".test")
-   ((member project-type '(npm)) ".unit")
+   ((member project-type '(npm)) ".spec")
    ((member project-type '(maven symfony)) "Test")
    ((member project-type '(gradlew grails)) "Tests")))
 
