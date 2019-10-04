@@ -32,8 +32,8 @@
 						(define-key typescript-mode-map (kbd "H-p") 'prettier-js)))
 (add-hook 'typescript-tsx-mode-hook
 					(lambda ()
-						(define-key typescript-mode-map (kbd "H-t") 'mocha-test-at-point)
-						(define-key typescript-mode-map (kbd "C-H-t") 'mocha-test-file)
+						(define-key typescript-tsx-mode-map (kbd "H-t") 'mocha-test-at-point)
+						(define-key typescript-tsx-mode-map (kbd "C-H-t") 'mocha-test-file)
 						(define-key typescript-tsx-mode-map (kbd "H-p") 'prettier-js)))
 (setq web-mode-enable-auto-quoting nil)
 (setq rtog/mode-repl-alist '((typescript-mode . run-ts)))
