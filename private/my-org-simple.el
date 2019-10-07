@@ -1,3 +1,4 @@
+(require 'hexo)
 (setq org-ellipsis "▼")
 (setq spaceline-org-clock-p t)
 (setq-default org-use-sub-superscripts nil) ;; 关闭org中 _ 和^ 下缀和上缀的问题
@@ -41,14 +42,29 @@
 
 (setq org-download-screenshot-method "screencapture -i %s")
 (setq org-image-actual-width 400)
+
+;; (setq org-publish-project-alist
+;;       '(("myBlog"
+;;          :base-directory "~/Documents/MyBlog/"
+;;          :base-extension "org"
+;;          :recursive t
+;;          :publishing-directory "source/_posts/"
+;;          :publishing-function org-jekyll-publish-to-html
+;;          )))
+
 (require 'org-octopress)
-(setq org-octopress-directory-top       "~/Documents/Blog/")
-(setq org-octopress-directory-posts     "~/Documents/Blog/source/_posts") ;文章发布目录
-(setq org-octopress-directory-org-top   "~/Documents/Blog")
-(setq org-octopress-directory-org-posts "~/Documents/Blog/blog") ;org文章目录
+(setq org-octopress-directory-top       "~/Documents/MyBlog/")
+(setq org-octopress-directory-posts     "~/Documents/MyBlog/source/_posts") ;文章发布目录
+(setq org-octopress-directory-org-top   "~/Documents/MyBlog")
+(setq org-octopress-directory-org-posts "~/Documents/MyBlog/source/_drafts") ;org文章目录
 
 (add-hook 'org-octopress-summary-mode-hook
           #'(lambda () (local-set-key (kbd "q") 'bury-buffer)))
+(defun hexo-my-blog ()
+  (interactive)
+  (hexo "~/Documents/MyBlog/"))
+
+
 (defun org-custom-link-img-export (path desc format)
   (cond
    ((eq format 'html)
