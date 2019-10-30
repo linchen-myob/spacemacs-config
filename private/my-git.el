@@ -100,6 +100,6 @@
 	(add-hook 'git-commit-mode-hook 'git-msg-prefix)
 	)
 
-(setq ivy-sort-functions-alist nil)
+;; (setq ivy-sort-functions-alist nil)
 (local-set-key (kbd "C-c i") 'git-msg-prefix)
 (provide 'my-git)
