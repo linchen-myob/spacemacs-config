@@ -89,7 +89,6 @@
 																			drag-stuff
 																			;; company-tabnine
 																			highlight-indent-guides
-																			;; tabbar
 																			;; youdao-dictionary
 																			)
 	 dotspacemacs-excluded-packages '(
@@ -185,6 +184,7 @@
 	(require 'my-key)
 	(require 'my-text)
 	(require 'my-hack)
+	(require 'my-git)
 	(if (version<= emacs-version "26.1")
 			(progn
 				(require 'my-javascript)

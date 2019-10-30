@@ -96,8 +96,10 @@
 (use-package git-msg-prefix
   :ensure t
   :config
-  (setq git-msg-prefix-log-flags " --since='1 week ago' "
-        git-msg-prefix-input-method 'helm-comp-read))
+  (setq git-msg-prefix-log-flags " --author=clin --since='1 week ago' --no-merges" )
+	(add-hook 'git-commit-mode-hook 'git-msg-prefix)
+	)
 
+(setq ivy-sort-functions-alist nil)
 (local-set-key (kbd "C-c i") 'git-msg-prefix)
 (provide 'my-git)
