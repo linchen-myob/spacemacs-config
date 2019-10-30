@@ -6,8 +6,8 @@
 (evilnc-default-hotkeys)
 
 (global-evil-surround-mode)
-(global-origami-mode)
 (evil-vimish-fold-mode)
+(global-origami-mode)
 
 ;; mark;;;;;
 ;; F3 => fast to mark current word

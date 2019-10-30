@@ -849,10 +849,11 @@ under theme/default/layout/"
               (rename-file created-md-file-path created-org-file-path)
               (find-file created-org-file-path)
               (goto-char 0) (replace-regexp "date:.*"
-                                            (concat "#+AUTHOR: 林晨<lc1990linux@gmail.com>\n#+OPTIONS: ^:nil toc:nil\n#+DATE: " (format-time-string "<%Y-%m-%d %a %H:%M>")))
+                                            (concat "#+DATE: " (format-time-string "<%Y-%m-%d %a %H:%M>")))
               (goto-char 0) (replace-regexp "^ *tags: *" "#+JEKYLL_TAGS: " )
               (goto-char 0) (flush-lines "---")
               (goto-char (point-max))
+							(insert "#+AUTHOR: 林晨<lc1990linux@gmail.com>\n#+OPTIONS: ^:nil toc:nil\n")
               (insert "#+JEKYLL_CATEGORIES: \n#+LAYOUT: \n\n\n # possible tags:[aws, blog, cli, cloudNative, cloudformation, component, config, css3, emacs, javascript, linux, lisp, mongodb, node, notes\n#  org, postgres, python, react, react-native, redux, security, sinon, spacemacs, tdd, tips, tool, unit-test,五笔]\n# possible categories: [agile, backend, blog, database, devops, emacs, org, frontend, javascript, linux, productive, python, 生产力]")
               (goto-char 0)
               (replace-regexp "title: .+$"

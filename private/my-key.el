@@ -12,6 +12,15 @@
 ;; (global-set-key (kbd "H-3") (other-buffer *spacemacs*))
 ;; (global-set-key (kbd "H-4") 'spacemacs/persp-switch-to-4)
 
+(global-set-key (kbd "M-0") 'spacemacs/persp-switch-to-0)
+(global-set-key (kbd "M-1") 'spacemacs/persp-switch-to-1)
+(global-set-key (kbd "M-2") 'spacemacs/persp-switch-to-2)
+(global-set-key (kbd "M-3") 'spacemacs/persp-switch-to-3)
+(global-set-key (kbd "M-4") 'spacemacs/persp-switch-to-4)
+(global-set-key (kbd "M-5") 'spacemacs/persp-switch-to-5)
+(global-set-key (kbd "M-6") 'spacemacs/persp-switch-to-6)
+(global-set-key (kbd "M-7") 'spacemacs/persp-switch-to-7)
+
 (defun toggle-term ()
   "toggle term"
   (interactive)

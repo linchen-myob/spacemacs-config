@@ -1,9 +1,9 @@
-;;(global-git-gutter+-mode)               ;
+;; (global-git-gutter+-mode)               ;
 
 ;; (global-git-commit-mode t)
 
-(use-package company-tabnine :ensure t)
-(add-to-list 'company-backends #'company-tabnine)
+;; (use-package company-tabnine :ensure t)
+;; (add-to-list 'company-backends #'company-tabnine)
 ;; (use-package tabbar :ensure t
 ;;   :after projectile :config
 ;;   (defun tabbar-buffer-groups ()
@@ -93,26 +93,11 @@
 ;;  :background "gray20"
 ;;  :height 1.2)
 
-;; ;; Change padding of the tabs
-;; ;; we also need to set separator to avoid overlapping tabs by highlighted tabs
-;; (custom-set-variables
-;;  '(tabbar-separator (quote (0.5))))
-;; ;; adding spaces
-;; (defun tabbar-buffer-tab-label (tab)
-;;   "Return a label for TAB.
-;; That is, a string used to represent it on the tab bar."
-;;   (let ((label  (if tabbar--buffer-show-groups
-;;                     (format "[%s]  " (tabbar-tab-tabset tab))
-;;                   (format "%s  " (tabbar-tab-value tab)))))
-;;     ;; Unless the tab bar auto scrolls to keep the selected tab
-;;     ;; visible, shorten the tab label to keep as many tabs as possible
-;;     ;; in the visible area of the tab bar.
-;;     (if tabbar-auto-scroll-flag
-;;         label
-;;       (tabbar-shorten
-;;        label (max 1 (/ (window-width)
-;;                        (length (tabbar-view
-;;                                 (tabbar-current-tabset)))))))))
+(use-package git-msg-prefix
+  :ensure t
+  :config
+  (setq git-msg-prefix-log-flags " --since='1 week ago' "
+        git-msg-prefix-input-method 'helm-comp-read))
 
-;; (tabbar-mode 1)
+(local-set-key (kbd "C-c i") 'git-msg-prefix)
 (provide 'my-git)
