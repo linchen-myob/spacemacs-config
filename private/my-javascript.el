@@ -20,11 +20,10 @@
 (add-hook 'rjsx-mode-hook 'emmet-mode)
 (add-hook 'js2-mode-hook
           (lambda ()
-            (define-key js2-mode-map (kbd "<H-f10>") 'mocha-test-at-point)
-            (define-key js2-mode-map (kbd "<C-H-f10>") 'mocha-test-file)
+            (define-key js2-mode-map (kbd "H-t") 'mocha-test-at-point)
+            (define-key js2-mode-map (kbd "C-H-t") 'mocha-test-file)
             (define-key js2-mode-map (kbd "H-f") 'eslint-fix-file-and-revert)
-            (define-key js2-mode-map (kbd "H-i") 'import-js-import)
-            (define-key js2-mode-map (kbd "H-g") 'import-js-goto)))
+            (define-key js2-mode-map (kbd "H-p") 'prettier-js)))
 
 (defun eslint-fix-file ()
   (interactive)

@@ -3,7 +3,7 @@
 # name: des
 # key: des
 # --
-describe("${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}", () => {
+describe("${1:`(substring (file-name-nondirectory (file-name-sans-extension (buffer-file-name))) 0 -5)`}", () => {
   it("should $2", () => {
     $0
   });
