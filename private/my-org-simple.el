@@ -41,7 +41,7 @@
 (setq org-attach-screenshot-command-line "screencapture -i %f")
 
 (setq org-download-screenshot-method "screencapture -i %s")
-(setq org-image-actual-width 400)
+(setq org-image-actual-width 600)
 
 ;; (setq org-publish-project-alist
 ;;       '(("myBlog"

@@ -1,5 +1,5 @@
 ;; (winum-mode)
-(global-set-key (kbd "H-k") 'kill-current-buffer)
+;; (global-set-key (kbd "H-k") 'kill-current-buffer)
 ;; (global-set-key (kbd "C-H-k") 'kill-buffer-and-window)
 (global-set-key (kbd "H-m") 'spacemacs/toggle-maximize-buffer)
 (global-set-key (kbd "H-0") 'neotree-show)
@@ -9,6 +9,10 @@
 (global-set-key (kbd "H-/") 'spacemacs/projectile-shell-pop)
 (global-set-key (kbd "H-+") 'evil-numbers/inc-at-pt)
 (global-set-key (kbd "H-_") 'evil-numbers/dec-at-pt)
+(global-set-key (kbd "H-j") 'evilmi-jump-items)
+(global-set-key (kbd "H-l") 'evilmi-select-items)
+(keyfreq-mode 1)
+(keyfreq-autosave-mode 1)
 ;; (global-set-key (kbd "H-3") (other-buffer *spacemacs*))
 ;; (global-set-key (kbd "H-4") 'spacemacs/persp-switch-to-4)
 
@@ -37,8 +41,20 @@
 ;; (spacemacs/set-leader-keys "0" 'spacemacs/projectile-shell-pop)
 
 ;; (global-set-key (kbd "<f5>") 'youdao-dictionary-search-at-point+)
+(defun kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer-and-window (delq (current-buffer) (buffer-list))))
+(defun kill-current-buffer-and-window ()
+	"kill current buffer and window"
+	(interactive)
+	(kill-buffer (current-buffer))
+	(delete-window)
+	)
 (global-set-key (kbd "C-H-h") 'previous-buffer)
 (global-set-key (kbd "C-H-l") 'next-buffer)
+(global-set-key (kbd "C-H-k") 'kill-other-buffers)
+(global-set-key (kbd "H-k") 'kill-current-buffer-and-window)
 ;; (global-set-key (kbd "<C-tab>") 'tabbar-forward-tab)
 ;; (global-set-key (kbd "<C-s-tab>") 'tabbar-backward-tab)
 ;; (global-set-key (kbd "C-H-j") 'tabbar-forward-group)
@@ -47,16 +63,14 @@
 ;; (global-set-key [backspace] 'evil-delete-backward-char)
 
 ;; indent guide
-(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
-(setq highlight-indent-guides-method 'character)
-(setq highlight-indent-guides-character ?\|)
+;; (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+;; (setq highlight-indent-guides-method 'character)
+;; (setq highlight-indent-guides-character ?\|)
 
-(setq highlight-indent-guides-auto-odd-face-perc 15)
-(setq highlight-indent-guides-auto-even-face-perc 15)
-(setq highlight-indent-guides-auto-character-face-perc 20)
+;; (setq highlight-indent-guides-auto-odd-face-perc 15)
+;; (setq highlight-indent-guides-auto-even-face-perc 15)
+;; (setq highlight-indent-guides-auto-character-face-perc 20)
 
-(setq highlight-indent-guides-delay 0)
-
-
+;; (setq highlight-indent-guides-delay 0)
 
 (provide 'my-key)

@@ -1,6 +1,7 @@
-(setq projectile-project-search-path '("~/Documents/"))
+(setq projectile-project-search-path '("~/Projects/MOL"))
 (setq projectile-enable-caching t)
 (setq projectile-sort-order 'recentf)
+(setq projectile-switch-project-action 'neotree-projectile-action)
 (defun occur-dwin ()
   "Call `occur' with a sane default."
   (interactive)
