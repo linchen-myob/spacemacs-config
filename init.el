@@ -6,11 +6,6 @@
 												fasd
 												neotree
 												(multiple-cursors :variables multiple-cursors-backend 'evil-mc)
-												;; (auto-completion :variables
-												;; 								 auto-completion-enable-help-tooltip t
-												;; 								 auto-completion-enable-snippets-in-popup t
-												;; 								 auto-completion-idle-delay 0.05
-												;; 								 auto-completion-private-snippets-directory "~/MyConfig/private/snippets/")
 												yaml
 												git
 												;; (wakatime :variables
@@ -35,14 +30,13 @@
 	 dotspacemacs-enable-lazy-installation 'unused
 	 dotspacemacs-ask-for-lazy-installation t
 	 dotspacemacs-configuration-layer-path '()
-	 dotspacemacs-folding-method 'origami
+	 dotspacemacs-folding-method 'evil
 	 dotspacemacs-configuration-layers (if (version<= emacs-version "26.1")
 																				 (append common-layers
 																								 '(imenu-list
 																									 html
 																									 import-js
 																									 prettier
-																									 ;; react
 																									 spacemacs-layouts
 																									 restclient
 																									 (java :variables
@@ -64,7 +58,6 @@
 																															 typescript-fmt-on-save 'nil
 																															 typescript-fmt-tool 'typescript-formatter
 																															 typescript-backend #'lsp)
-																									 ;; docker
 																									 (haskell :variables
 																														haskell-completion-backend 'lsp
 																														haskell-enable-hindent t
@@ -74,7 +67,6 @@
 																			 (append common-layers '(emacs-lisp org)))
 	 dotspacemacs-additional-packages '(
 																			ov
-																			;; ace-jump-mode
 																			keyfreq
 																			org-octopress
 																			git-msg-prefix
@@ -83,7 +75,6 @@
 																			eterm-256color
 																			thingopt
 																			indium
-																			;; ts-comint
 																			evil-surround
 																			evil-numbers
 																			evil-nerd-commenter
@@ -230,7 +221,6 @@
 
 	;; (setq company-auto-complete-chars nil)
 
-	;; (setq auto-save-interval 5)
 	(global-evil-matchit-mode)
 
 	(if (version<= emacs-version "26.1") (server-start))
