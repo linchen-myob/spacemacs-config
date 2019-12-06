@@ -35,10 +35,12 @@
 																				 (append common-layers
 																								 '(imenu-list
 																									 html
+																									 react
 																									 import-js
 																									 prettier
 																									 spacemacs-layouts
 																									 restclient
+																									 epub
 																									 (java :variables
 																												 java-backend 'lsp)
 																									 (javascript :variables
@@ -52,7 +54,7 @@
 																															 javascript-repl `nodejs
 																															 javascript-import-tool 'import-js)
 																									 (lsp :variables
-																												lsp-navigation 'simple
+																												lsp-navigation 'peek
 																												lsp-ui-sideline-enable nil)
 																									 (typescript :variables
 																															 typescript-fmt-on-save 'nil
@@ -126,7 +128,7 @@
 	 dotspacemacs-colorize-cursor-according-to-state t
 	 dotspacemacs-default-font '(
 															 "Monaco"
-															 :size 12
+															 :size 14
 															 :weight light
 															 :width normal
 															 :powerline-scale 1.5)
@@ -265,7 +267,7 @@ This function is called at the very end of Spacemacs initialization."
 		 ("XXXX" . "#dc752f")
 		 ("???" . "#dc752f"))))
  '(indent-tabs-mode t)
- '(mocha-jest-command "jest --config jest.config.js --colors")
+ '(mocha-jest-command "npm test -- --colors")
  '(package-selected-packages
 	 (quote
 		(keyfreq lsp-haskell haskell-mode treemacs pfuture epc concurrent deferred company-terraform hexo highlight-indent-guides yapfify utop tuareg caml sqlup-mode sql-indent seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rbenv rake pytest pyenv-mode py-isort pippel pipenv pyvenv pip-requirements ocp-indent ob-elixir mvn minitest meghanada maven-test-mode lsp-python-ms python lsp-java live-py-mode importmagic groovy-mode groovy-imports pcache gradle-mode flycheck-ocaml merlin flycheck-mix flycheck-credo emojify emoji-cheat-sheet-plus helm helm-core dune cython-mode company-emoji company-anaconda chruby bundler inf-ruby browse-at-remote blacken anaconda-mode pythonic alchemist elixir-mode org-plus-contrib persp-projectile ov centered-window ace-jump-mode tabbar magit-tbdiff vdiff-magit diffview org-preview-html git-msg-prefix multi-web-mode yarn-mode ts-comint realgud-node-inspect realgud indium hide-lines graphql impatient-mode counsel-css zenburn-theme zen-and-art-theme yaml-mode ws-butler winum white-sand-theme which-key wgrep web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme toc-org tide typescript-mode thingopt terraform-mode hcl-mode tao-theme tangotango-theme tango-plus-theme tango-2-theme tagedit sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spaceline powerline spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smex smeargle slim-mode shell-pop seti-theme scss-mode sass-mode reverse-theme reveal-in-osx-finder restart-emacs request rebecca-theme rainbow-delimiters railscasts-theme pyim pyim-basedict purple-haze-theme pug-mode professional-theme popwin planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme persp-mode pcre2el pbcopy paradox spinner pangu-spacing osx-trash osx-dictionary orgit organic-green-theme org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-octopress ctable orglue epic org-mime org-download org-bullets open-junk-file omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme npm-mode noctilux-theme neotree naquadah-theme mustang-theme multi-term move-text monochrome-theme molokai-theme moe-theme mocha minimal-theme material-theme majapahit-theme magit-gitflow madhat2r-theme macrostep lush-theme lorem-ipsum livid-mode skewer-mode simple-httpd linum-relative link-hint light-soap-theme launchctl js2-refactor multiple-cursors js2-mode js-doc jbeans-theme jazz-theme ivy-hydra ir-black-theme inkpot-theme indent-guide imenu-list hydra lv hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation heroku-theme hemisu-theme helm-make hc-zenburn-theme haml-mode gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gandalf-theme fuzzy focus-autosave-mode flycheck-pos-tip flycheck flx-ido flx flatui-theme flatland-theme find-by-pinyin-dired fill-column-indicator fasd farmhouse-theme fancy-battery eyebrowse expand-region exotica-theme exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit transient git-commit with-editor evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu eterm-256color xterm-color espresso-theme eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump f drag-stuff dracula-theme dockerfile-mode docker json-mode tablist magit-popup docker-tramp json-snatcher json-reformat django-theme diminish diff-hl darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme counsel-projectile projectile pkg-info epl counsel swiper company-web web-completion-data company-tern s dash-functional tern company-statistics company-quickhelp pos-tip company column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized coffee-mode clues-theme clean-aindent-mode cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme bind-map bind-key badwolf-theme auto-yasnippet yasnippet auto-highlight-symbol auto-compile packed async apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme all-the-icons-ivy ivy all-the-icons-gnus dash all-the-icons-dired all-the-icons memoize alect-themes aggressive-indent afternoon-theme adaptive-wrap ace-window ace-pinyin pinyinlib ace-link avy ac-ispell auto-complete popup monokai-theme)))
@@ -296,4 +298,3 @@ This function is called at the very end of Spacemacs initialization."
  '(web-mode-html-tag-face ((t (:foreground "DeepSkyBlue1" :weight semi-bold :height 1.2 :family "Courier New"))))
  '(web-mode-keyword-face ((t (:foreground "#F92672" :slant italic :weight normal :height 1.2 :family "Operator Mono")))))
 )
-

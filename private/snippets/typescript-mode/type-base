@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Lin Chen 
+# name: select base type
+# key: tp
+# --
+$1: ${2:$$(yas-choose-value '("string" "boolean" "number" "void" "null" "any"))};
+$0

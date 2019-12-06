@@ -7,7 +7,35 @@
 
 (global-evil-surround-mode)
 (evil-vimish-fold-mode)
-(global-origami-mode)
+
+(use-package hideshow
+  :commands (hs-minor-mode
+             hs-toggle-hiding)
+  :init
+  (add-hook 'prog-mode-hook #'hs-minor-mode)
+  :diminish hs-minor-mode
+  :config
+  (defun evil-toggle-fold ()
+    "Use `vimish-fold-toggle' if there's a fold at point.
+If not, use `hs-toggle-hiding' instead.
+If region is active, adds or removes vimish folds."
+    (interactive)
+    (if (region-active-p)
+        (unless
+            (ignore-errors (evil-toggle-fold))
+          (vimish-fold-delete))
+      (unless (delq nil (mapcar #'vimish-fold--toggle (overlays-at (point))))
+        (hs-toggle-hiding))))
+  )
+(defun hide-imports ()
+	(interactive)
+	(evil-goto-first-line)
+	(mark-paragraph)
+	(evil-vimish-fold/create (region-beginning) (region-end))
+	(evil-jump-back)
+	)
+
+;; (global-origami-mode)
 
 ;; mark;;;;;
 ;; F3 => fast to mark current word

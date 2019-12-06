@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# contributor: Lin Chen 
-# name: style
-# key: style
-# -- 
-
-const styles =${1: (theme: Theme) => }createStyles({
-  $0
-});

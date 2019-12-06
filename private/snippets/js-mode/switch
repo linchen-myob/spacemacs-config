@@ -4,7 +4,9 @@
 # --
 switch (${1:condition}) {
   case ${2:expression}:
-    $0
+    ${3:logic}
     break;
   default:
+		$4
 }
+$0

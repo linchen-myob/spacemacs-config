@@ -1,0 +1,13 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: class extends and constructor and export
+# key: cls
+# group: es6
+# --
+export default class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} extends ${2:ParentClass} {
+  constructor(${3:props}) {
+    super($3);
+		$4
+	}
+
+	$0
+}

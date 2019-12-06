@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor: Lin Chen 
+# name: interface with extends
+# key: ifc
+# --
+interface $1 extends $2 {
+	$0
+}

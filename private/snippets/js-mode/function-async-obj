@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: async function obj
+# key: fun
+# group: es6
+# --
+const $1 = async ($2) => {
+	$0
+}

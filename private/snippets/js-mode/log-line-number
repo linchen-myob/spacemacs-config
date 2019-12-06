@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: console.log with line number
+# key: log
+# --
+console.log("`(what-line)`", ${1:`(yank)`}$2);
+$0
+

@@ -1,6 +1,8 @@
 # -*- mode: snippet -*-
 # contributor: Lin Chen 
-# name: imp
-# key: imp
+# name: interface
+# key: ifc
 # --
-import $1 from '$1';
+interface $1 {
+	$0
+}

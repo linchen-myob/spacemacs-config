@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: arrow function asign to object
+# key: fun
+# --
+const $1 = ($2) => {
+	$0
+}

@@ -1,5 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: debugger
-# key: dbg
+# name: try
+# key: try
 # --
-debugger;
+try {
+	$1
+}
+$0

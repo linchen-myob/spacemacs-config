@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # contributor: Lin Chen 
-# name: pureComp
-# key: pureComp
+# name: pure Component
+# key: comp
 # -- 
 import React from "react";
 

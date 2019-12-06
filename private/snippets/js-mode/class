@@ -1,8 +1,8 @@
-# -*- mode: snippet -*-
-#name : Class
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: class without extends
+# key: cls
+# group: es6
 # --
-var ${1:name} = new Class({
-  initialize: function($2) {
-    $0
-  }
-});
+export default class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} {
+	$0
+}

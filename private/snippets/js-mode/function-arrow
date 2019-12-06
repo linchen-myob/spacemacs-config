@@ -1,8 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: setter
-# key: set
+# name: arrow function
+# key: fun
 # group: es6
 # --
-set ${1:prop}(${2:value}) {
-  $0
-}
+($1) => $0

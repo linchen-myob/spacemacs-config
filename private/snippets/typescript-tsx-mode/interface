@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# contributor: Lin Chen 
-# name: interface
-# key: ifc
-# --
-interface ${1:Interface}${2: extends ${3:WithStyles<typeof styles>}} {
-  $4: ${5:$$(yas-choose-value '("string" "boolean" "number" "void" "null" "any"))};
-}

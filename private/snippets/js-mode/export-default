@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: export default
+# key: exp
+# group: es6
+# --
+export default ${0:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`};

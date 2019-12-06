@@ -1,6 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: import
+# name: import different from module name
 # key: imp
 # group: es6
 # --
-import ${1:defaultMember}${2:, { ${3:member} }} from '${4:module}';
+import ${1:default} from "$2";

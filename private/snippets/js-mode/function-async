@@ -1,8 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: getter
-# key: get
+# name: async function
+# key: fun
 # group: es6
 # --
-get ${1:prop}() {
-  return $0;
-}
+async ($1) => $0
