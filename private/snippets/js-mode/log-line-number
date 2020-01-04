@@ -1,7 +1,5 @@
 # -*- mode: snippet -*-
-# name: console.log with line number
+# name: console.log with clipboard
 # key: log
 # --
-console.log("`(what-line)`", ${1:`(yank)`}$2);
-$0
-
+console.log("`(what-line)`", ${1:`(yank)`}$0);

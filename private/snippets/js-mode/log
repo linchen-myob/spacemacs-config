@@ -2,5 +2,4 @@
 # name: console.log
 # key: log
 # --
-console.log(${1:`(yank)`}$2);
-$0
+console.log("`(what-line)`", $1);
