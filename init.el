@@ -8,9 +8,9 @@
 												(multiple-cursors :variables multiple-cursors-backend 'evil-mc)
 												yaml
 												git
-												;; (wakatime :variables
-												;;           wakatime-api-key  "bf4dec38-82d7-49f1-a6d9-6fbc737c2b18"
-												;;           wakatime-cli-pathk "/usr/local/bin/wakatime")
+												(wakatime :variables
+												          wakatime-api-key  "bf4dec38-82d7-49f1-a6d9-6fbc737c2b18"
+												          wakatime-cli-pathk "/usr/local/bin/wakatime")
 												ivy
 												(osx :variables
 														 osx-use-option-as-meta t
@@ -53,6 +53,13 @@
 																															 js2-include-node-externs t
 																															 javascript-repl `nodejs
 																															 javascript-import-tool 'import-js)
+																									 (go :variables
+																											 go-backend 'lsp
+																											 go-tab-width 4
+																											 go-format-before-save t
+																											 gofmt-command "goimports"
+																											 go-use-golangci-lint t
+																											 go-use-test-args "-race -timeout 10s")
 																									 (lsp :variables
 																												lsp-navigation 'peek
 																												lsp-ui-sideline-enable nil)
@@ -174,7 +181,12 @@
 	 dotspacemacs-whitespace-cleanup nil
 	 ;; Supported themes are ‘spacemacs’,‘all-the-icons’, ‘custom’, ‘doom’,‘vim-powerline’ and ‘vanilla’.
 	 dotspacemacs-mode-line-theme 'spacemacs
-	 ))
+	 )
+	 (setq configuration-layer-elpa-archives
+    '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+      ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+      ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
+	  )
 
 (defun dotspacemacs/user-config ()
 	;; (org-defkey org-mode-map [(meta return)] 'org-meta-return)
