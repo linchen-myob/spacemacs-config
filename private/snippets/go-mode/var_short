@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: short var
+# key: var
+# --
+${1:name} := ${2:vaule}
+$0

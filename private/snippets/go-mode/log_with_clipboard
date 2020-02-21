@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: log with clipboard fmt.Print
+# key: log
+# --
+fmt.Printf("%+v\n", ${1:`(yank)`}) // output for debug
+$0
