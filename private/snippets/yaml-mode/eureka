@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: eureka for localhost
+# key: erk
+# --
+eureka:
+	client:
+		serviceUrl:
+			defaultZone: http://localhost:8761/eureka/
+	instance:
+		prefer-ip-address: true

@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: println
-# key: pr
+# name: log line
+# key: log
 # --
-System.out.println("${1:text}");
+System.out.println("`(what-line)`: ${1}");
 $0

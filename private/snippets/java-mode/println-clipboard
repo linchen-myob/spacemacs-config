@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: log line with clipboard
+# key: log
+# --
+System.out.println("`(what-line)`: " + ${1:`(yank)`});
+$0

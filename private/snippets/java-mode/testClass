@@ -2,11 +2,10 @@
 # name: testClass
 # key: tc
 # --
-import junit.framework.*;
-import junit.textui.*;
+package $2;
 
-public class Test${1:Class} extends TestCase {
-       protected void setUp() {
-                 $0
-       }
+import org.junit.Test;
+
+public class ${1:Class}Test {
+			 $0
 }

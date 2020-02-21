@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: import using var
+# key: var
+# group: es5
+# --
+var ${1:default} = require("$1");

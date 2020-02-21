@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: import same from module name
+# key: imp
+# group: es6
+# --
+import ${1:default} from "$1";
+$0

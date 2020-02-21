@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: localhost
+# key: lh
+# --
+http://localhost:${1:8000}/
