@@ -1,4 +1,4 @@
-(setq projectile-project-search-path '("~/Projects/MOL"))
+(setq projectile-project-search-path '("~/Projects"))
 (setq projectile-enable-caching t)
 (setq projectile-sort-order 'recentf)
 (setq projectile-switch-project-action 'neotree-projectile-action)
@@ -21,24 +21,6 @@
 ;; (global-set-key (kbd "H-0") 'treemacs-select-window)
 (global-set-key (kbd "<f9>") 'imenu-list-smart-toggle)
 
-(defun projectile-test-suffix (project-type)
-  "Find default test files suffix based on PROJECT-TYPE."
-  (cond
-   ((member project-type '(rails-rspec ruby-rspec)) "_spec")
-   ((member project-type '(rails-test ruby-test lein-test go)) "_test")
-   ((member project-type '(scons)) "test")
-   ((member project-type '(generic)) ".test")
-   ((member project-type '(npm)) ".spec")
-   ((member project-type '(maven symfony)) "Test")
-   ((member project-type '(gradlew grails)) "Tests")))
-
-(defun default-projectile-suffix-unless-gradlew (project-type)
-  (if (eq project-type 'gradlew)
-      "Tests"
-    (projectile-test-suffix project-type)))
-
-(custom-set-variables
- '(projectile-test-suffix-function 'default-projectile-suffix-unless-gradlew))
 
 (provide 'my-project)
 
